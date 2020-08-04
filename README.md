@@ -14,16 +14,24 @@ Install with the Lektor toolchain. Within your project, run
 
 After this, add a deployment target to your project file (*.lektorproject) containing the URL for your elasticsearch cluster. This should look like:
 `[servers.elasticsearch]
+
 name = ElasticSearch
+
 enabled = yes
+
 target = elasticsearch:/<CLUSTER-URL>
 `
 
 You will also need to add configuration details to the plugin specific configuration file. This would be in a top-level `configs` folder with a file called `elasticsearch.ini`. In this file you should add the following:
+
 `[cluster]
+
 url = <CLUSTER-URL>
+
 access_key = <CLUSTER ACCESS KEY>
+
 access_secret = <CLUSTER ACCESS SECRET>
+
 port = <PORT FOR CLUSTER>`
 
 You can also submit these as command line arguments when you call `lektor deploy elasticsearch`. This will cause Lektor to upload your website content to the Elasticsearch cluster you targeted. 
